@@ -10,6 +10,14 @@ import UIKit
 
 class PlaylistViewController: UIViewController {
   
+  // MARK: - IBOutlets
+  @IBOutlet weak var tableView: UITableView! {
+    didSet {
+      setupTableView()
+    }
+  }
+  
+  // MARK: - Data, Properties
   var songViewModels = [SongViewModel]()
   
   let headerView: UIImageView = {
@@ -21,24 +29,9 @@ class PlaylistViewController: UIViewController {
     return view
   }()
   
-  @IBOutlet weak var tableView: UITableView! {
-    didSet {
-      setupTableView()
-    }
-  }
-  
-  private func appendViewModels(_ songs: [Song]) {
-    songs.forEach { song in
-      songViewModels.append(
-        SongViewModel(songTitle: song.name, imageUrlString: song.album.images[0].url)
-      )
-    }
-  }
-  
   private let provider = PlaylistProvider()
   
- 
-  
+  // MARK: - Functions for ViewController
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -60,6 +53,7 @@ class PlaylistViewController: UIViewController {
     refreshPlaylist()
   }
   
+  // MARK: - Functions for Table View
   private func setupTableView() {
     tableView.dataSource = self
     tableView.delegate = self
@@ -72,33 +66,13 @@ class PlaylistViewController: UIViewController {
     implementPagination()
   }
   
-  private func refreshPlaylist() {
-    
-    songViewModels.removeAll()
-    
-    self.provider.fetchPlaylistFromStart { [weak self] result in
-      switch result {
-      case .success(let songs):
-        
-        self?.appendViewModels(songs)
-        
-        DispatchQueue.main.async {
-          self?.tableView.reloadData()
-        }
-        
-      case .failure(let error):
-        print(error)
-      }
-    }
-  }
-  
   private func implementPagination() {
     tableView.addRefreshFooter {
-      self.provider.fetchPlaylistNextPage { [weak self, hasNextPage = self.provider.hasNextPage] result in
+      self.provider.fetchPlaylist { [weak self, hasNextPage = self.provider.hasNextPage] result in
         switch result {
         case .success(let songs):
-          self?.appendViewModels(songs)
           DispatchQueue.main.async {
+            self?.appendViewModels(songs)
             self?.tableView.reloadData()
             if hasNextPage {
               self?.tableView.endFooterRefreshing()
@@ -113,8 +87,37 @@ class PlaylistViewController: UIViewController {
     }
   }
   
+  // MARK: - Functions for Data
+  private func refreshPlaylist() {
+    
+    songViewModels.removeAll()
+    
+    self.provider.fetchPlaylist(isRefreshing: true) { [weak self] result in
+      switch result {
+      case .success(let songs):
+        
+        DispatchQueue.main.async {
+          self?.appendViewModels(songs)
+          self?.tableView.reloadData()
+        }
+        
+      case .failure(let error):
+        print(error)
+      }
+    }
+  }
+  
+  private func appendViewModels(_ songs: [Song]) {
+    songs.forEach { song in
+      songViewModels.append(
+        SongViewModel(songTitle: song.name, imageUrlString: song.album.images[0].url)
+      )
+    }
+  }
+  
 }
 
+// MARK: - UITableViewDataSource
 extension PlaylistViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -135,31 +138,36 @@ extension PlaylistViewController: UITableViewDataSource {
   
 }
 
+// MARK: - UITableViewDelegate
 extension PlaylistViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
     return UITableView.automaticDimension
   }
   
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    
     cell.contentView.alpha = 0
-    UIViewPropertyAnimator(duration: 0.2, curve: .linear) {
+    UIViewPropertyAnimator(duration: 0.3, curve: .linear) {
       cell.contentView.alpha = 1
     }.startAnimation()
   }
   
 }
 
+// MARK: - UIScrollViewDelegate
 extension PlaylistViewController: UIScrollViewDelegate {
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     
     let y = Constant.kScreenWidth - (scrollView.contentOffset.y + Constant.kScreenWidth)
-    let offset = Constant.kScreenWidth - y
+    
+    let offset = y - Constant.kScreenWidth
     
     var height = CGFloat.zero
     
-    if offset < 0 {
+    if offset > 0 {
       height = max(y, Constant.kScreenWidth)
     } else {
       height = min(max(y, 0), Constant.kScreenWidth)

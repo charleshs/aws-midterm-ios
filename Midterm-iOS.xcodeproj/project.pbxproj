@@ -27,7 +27,6 @@
 		D3D2A33E23D149C600CCC64F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A33D23D149C600CCC64F /* Token.swift */; };
 		D3D2A34323D14D2B00CCC64F /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34123D14D2B00CCC64F /* SongTableViewCell.swift */; };
 		D3D2A34423D14D2B00CCC64F /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */; };
-		D3D2A34A23D14DBB00CCC64F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34923D14DBB00CCC64F /* Observable.swift */; };
 		D3D2A34E23D1577500CCC64F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34D23D1577500CCC64F /* HeaderView.swift */; };
 		D3D2A35123D15EFF00CCC64F /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35023D15EFF00CCC64F /* Song.swift */; };
 		D3D2A35323D15F7400CCC64F /* KKSuccessParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35223D15F7400CCC64F /* KKSuccessParser.swift */; };
@@ -85,7 +84,6 @@
 		D3D2A33D23D149C600CCC64F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		D3D2A34123D14D2B00CCC64F /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
-		D3D2A34923D14DBB00CCC64F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		D3D2A34D23D1577500CCC64F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		D3D2A35023D15EFF00CCC64F /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		D3D2A35223D15F7400CCC64F /* KKSuccessParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKSuccessParser.swift; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 		D3D2A34823D14D8400CCC64F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				D3D2A34923D14DBB00CCC64F /* Observable.swift */,
 				D318C06123D1787300848C27 /* SongViewModel.swift */,
 			);
 			path = ViewModel;
@@ -557,7 +554,6 @@
 				D3D2A35723D1615E00CCC64F /* Summary.swift in Sources */,
 				D3F30BF123D1A99B002D4DE2 /* Constant.swift in Sources */,
 				D3D2A35523D1615900CCC64F /* Paging.swift in Sources */,
-				D3D2A34A23D14DBB00CCC64F /* Observable.swift in Sources */,
 				D318C06223D1787300848C27 /* SongViewModel.swift in Sources */,
 				D3D2A34323D14D2B00CCC64F /* SongTableViewCell.swift in Sources */,
 				D3D2A35A23D162AE00CCC64F /* PlaylistProvider.swift in Sources */,

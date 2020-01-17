@@ -18,27 +18,15 @@ class PlaylistProvider {
   
   var hasNextPage: Bool = true
   
-  func fetchPlaylistNextPage(completion: @escaping PlaylistResult) {
-        
-    guard let accessToken = AuthManager.shared.token?.accessToken else { return }
-    let request = KKRequest.playlist(token: accessToken, limit: limit, offset: nextOffset)
-    
-    fetchPlaylist(request: request, completion: completion)
-    
-  }
-  
-  func fetchPlaylistFromStart(completion: @escaping PlaylistResult) {
+  /// isRefreshing is `false` by default. Set to `true` if you want to refresh data.
+  func fetchPlaylist(isRefreshing: Bool = false,
+                     completion: @escaping PlaylistResult) {
     
     guard let accessToken = AuthManager.shared.token?.accessToken else { return }
     
-    nextOffset = 0
+    nextOffset = isRefreshing ? 0 : nextOffset
+    
     let request = KKRequest.playlist(token: accessToken, limit: limit, offset: nextOffset)
-    
-    fetchPlaylist(request: request, completion: completion)
-    
-  }
-  
-  private func fetchPlaylist(request: KKRequest, completion: @escaping PlaylistResult) {
     
     HTTPClient.shared.request(request) { [weak self] (result) in
       
@@ -50,7 +38,7 @@ class PlaylistProvider {
         
         switch parseResult {
         case .success(let parser):
-//          self.playlist.append(contentsOf: parser.data)
+
           if parser.paging.next != nil {
             self.nextOffset += self.limit
           } else {

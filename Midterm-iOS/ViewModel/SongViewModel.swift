@@ -14,10 +14,9 @@ class SongViewModel {
   
   let imageUrlString: String
   
-  var isFavorite = Observable<Bool>(value: false)
+  var isFavorite: Bool = false
   
   init(songTitle: String, imageUrlString: String) {
-    
     self.songTitle = songTitle
     self.imageUrlString = imageUrlString
   }
