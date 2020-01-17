@@ -14,7 +14,7 @@
 		D318C06223D1787300848C27 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318C06123D1787300848C27 /* SongViewModel.swift */; };
 		D318C06423D17C4A00848C27 /* MJRefreshWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318C06323D17C4A00848C27 /* MJRefreshWrapper.swift */; };
 		D3D2A30423D1410C00CCC64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A30323D1410C00CCC64F /* AppDelegate.swift */; };
-		D3D2A30823D1410C00CCC64F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A30723D1410C00CCC64F /* ViewController.swift */; };
+		D3D2A30823D1410C00CCC64F /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A30723D1410C00CCC64F /* PlaylistViewController.swift */; };
 		D3D2A30B23D1410C00CCC64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D2A30923D1410C00CCC64F /* Main.storyboard */; };
 		D3D2A30D23D1411000CCC64F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D2A30C23D1411000CCC64F /* Assets.xcassets */; };
 		D3D2A31023D1411000CCC64F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D2A30E23D1411000CCC64F /* LaunchScreen.storyboard */; };
@@ -66,7 +66,7 @@
 		D318C06323D17C4A00848C27 /* MJRefreshWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJRefreshWrapper.swift; sourceTree = "<group>"; };
 		D3D2A30023D1410C00CCC64F /* Midterm-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Midterm-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D2A30323D1410C00CCC64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3D2A30723D1410C00CCC64F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D3D2A30723D1410C00CCC64F /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		D3D2A30A23D1410C00CCC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3D2A30C23D1411000CCC64F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3D2A30F23D1411000CCC64F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -155,6 +155,14 @@
 			path = "Third Party Wrapper";
 			sourceTree = "<group>";
 		};
+		D318C06523D18B7300848C27 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				D3D2A34D23D1577500CCC64F /* BannerView.swift */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
 		D3D2A2F723D1410C00CCC64F = {
 			isa = PBXGroup;
 			children = (
@@ -181,16 +189,14 @@
 			isa = PBXGroup;
 			children = (
 				D318C05E23D1779300848C27 /* Third Party Wrapper */,
-				D3D2A33523D1445100CCC64F /* Utility */,
 				D3D2A33623D1449500CCC64F /* Model */,
-				D3D2A34723D14D6A00CCC64F /* Controller */,
 				D3D2A34823D14D8400CCC64F /* ViewModel */,
 				D3D2A34623D14D3A00CCC64F /* View */,
-				D3D2A30723D1410C00CCC64F /* ViewController.swift */,
+				D3D2A30723D1410C00CCC64F /* PlaylistViewController.swift */,
 				D3D2A30923D1410C00CCC64F /* Main.storyboard */,
-				D3D2A30C23D1411000CCC64F /* Assets.xcassets */,
 				D3D2A30E23D1411000CCC64F /* LaunchScreen.storyboard */,
 				D3D2A31123D1411000CCC64F /* Info.plist */,
+				D3D2A30C23D1411000CCC64F /* Assets.xcassets */,
 				D3D2A30323D1410C00CCC64F /* AppDelegate.swift */,
 			);
 			path = "Midterm-iOS";
@@ -227,6 +233,7 @@
 		D3D2A33623D1449500CCC64F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D3D2A33523D1445100CCC64F /* Utility */,
 				D3D2A34F23D15EE300CCC64F /* DataModel */,
 				D3D2A35823D162A000CCC64F /* Playlist */,
 				D3D2A33F23D149CC00CCC64F /* Auth */,
@@ -255,17 +262,10 @@
 		D3D2A34623D14D3A00CCC64F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D3D2A34D23D1577500CCC64F /* BannerView.swift */,
+				D318C06523D18B7300848C27 /* Banner */,
 				D3D2A34523D14D3200CCC64F /* SongTVCell */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		D3D2A34723D14D6A00CCC64F /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		D3D2A34823D14D8400CCC64F /* ViewModel */ = {
@@ -538,7 +538,7 @@
 			files = (
 				D3D2A35323D15F7400CCC64F /* KKSuccessParser.swift in Sources */,
 				D3D2A34E23D1577500CCC64F /* BannerView.swift in Sources */,
-				D3D2A30823D1410C00CCC64F /* ViewController.swift in Sources */,
+				D3D2A30823D1410C00CCC64F /* PlaylistViewController.swift in Sources */,
 				D3D2A33E23D149C600CCC64F /* Token.swift in Sources */,
 				D3D2A33823D144AC00CCC64F /* KKRequest.swift in Sources */,
 				D3D2A33C23D148C800CCC64F /* JSONParser.swift in Sources */,

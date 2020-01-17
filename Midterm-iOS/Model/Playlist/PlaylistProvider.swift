@@ -14,18 +14,31 @@ class PlaylistProvider {
   
   private let limit = 20
   
-  var nextOffset = 0
+  private var nextOffset = 0
   
-  var playlist = [Song]()
+  var hasNextPage: Bool = true
+  
+  func fetchPlaylistNextPage(completion: @escaping PlaylistResult) {
+        
+    guard let accessToken = AuthManager.shared.token?.accessToken else { return }
+    let request = KKRequest.playlist(token: accessToken, limit: limit, offset: nextOffset)
+    
+    fetchPlaylist(request: request, completion: completion)
+    
+  }
   
   func fetchPlaylistFromStart(completion: @escaping PlaylistResult) {
     
     guard let accessToken = AuthManager.shared.token?.accessToken else { return }
     
-    playlist.removeAll()
     nextOffset = 0
-    
     let request = KKRequest.playlist(token: accessToken, limit: limit, offset: nextOffset)
+    
+    fetchPlaylist(request: request, completion: completion)
+    
+  }
+  
+  private func fetchPlaylist(request: KKRequest, completion: @escaping PlaylistResult) {
     
     HTTPClient.shared.request(request) { [weak self] (result) in
       
@@ -37,11 +50,14 @@ class PlaylistProvider {
         
         switch parseResult {
         case .success(let parser):
-          self.playlist.append(contentsOf: parser.data)
+//          self.playlist.append(contentsOf: parser.data)
           if parser.paging.next != nil {
             self.nextOffset += self.limit
+          } else {
+            self.hasNextPage = false
           }
-          completion(.success(self.playlist))
+          
+          completion(.success(parser.data))
           
         case .failure(let error):
           completion(.failure(error))

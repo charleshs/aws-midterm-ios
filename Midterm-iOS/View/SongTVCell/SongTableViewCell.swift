@@ -23,7 +23,7 @@ class SongTableViewCell: UITableViewCell {
   @IBOutlet weak var favoriteBtn: UIButton!
   
   @IBAction func didTapFavoriteBtn(_ sender: Any) {
-    
+        
     viewModel?.isFavorite.value.toggle()
   }
   
@@ -37,7 +37,9 @@ class SongTableViewCell: UITableViewCell {
     
     viewModel.isFavorite.addObserver { [weak self] isFavorite in
       
-      self?.favoriteBtn.backgroundColor = isFavorite ? UIColor.systemPink : UIColor.clear
+      self?.favoriteBtn.isSelected = isFavorite
+      
+      self?.favoriteBtn.tintColor = isFavorite ? .systemPink : .darkGray
     }
     
   }
