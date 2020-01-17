@@ -9,11 +9,34 @@
 import UIKit
 
 class BannerView: UIView {
+
+  let imgView: UIImageView = {
+    let view = UIImageView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.contentMode = .scaleAspectFill
+    view.clipsToBounds = true
+    return view
+  }()
   
-  override func draw(_ rect: CGRect) {
-    super.draw(rect)
+  private func setupImgView(image: UIImage?) {
     
-    translatesAutoresizingMaskIntoConstraints = false
-    heightAnchor.constraint(equalTo: widthAnchor).isActive = true
+    imgView.image = image
+    addSubview(imgView)
+    
+    NSLayoutConstraint.activate([
+      imgView.topAnchor.constraint(equalTo: topAnchor),
+      imgView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      imgView.trailingAnchor.constraint(equalTo: trailingAnchor),
+      imgView.bottomAnchor.constraint(equalTo: bottomAnchor)
+    ])
+  }
+  
+  init(frame: CGRect, image: UIImage?) {
+    super.init(frame: frame)
+    setupImgView(image: image)
+  }
+  
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
   }
 }

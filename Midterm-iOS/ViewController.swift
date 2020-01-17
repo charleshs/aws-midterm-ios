@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  
   @IBOutlet weak var tableView: UITableView! {
     didSet {
       setupTableView()
@@ -38,6 +38,13 @@ class ViewController: UIViewController {
     
     let nib = UINib(nibName: SongTableViewCell.identifier, bundle: nil)
     tableView.register(nib, forCellReuseIdentifier: SongTableViewCell.identifier)
+    
+    let bannerFrame = CGRect(x: 0,
+                             y: 0,
+                             width: UIScreen.main.bounds.width,
+                             height: UIScreen.main.bounds.width)
+    
+    tableView.tableHeaderView = BannerView(frame: bannerFrame, image: UIImage(named: "BannerImage"))
   }
 }
 

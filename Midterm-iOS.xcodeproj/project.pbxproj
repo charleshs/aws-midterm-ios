@@ -22,7 +22,7 @@
 		D3D2A34323D14D2B00CCC64F /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34123D14D2B00CCC64F /* SongTableViewCell.swift */; };
 		D3D2A34423D14D2B00CCC64F /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */; };
 		D3D2A34A23D14DBB00CCC64F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34923D14DBB00CCC64F /* Observable.swift */; };
-		D3D2A34C23D1505A00CCC64F /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34B23D1505A00CCC64F /* BannerView.swift */; };
+		D3D2A34E23D1577500CCC64F /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34D23D1577500CCC64F /* BannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		D3D2A34123D14D2B00CCC64F /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
 		D3D2A34923D14DBB00CCC64F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		D3D2A34B23D1505A00CCC64F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		D3D2A34D23D1577500CCC64F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +187,7 @@
 		D3D2A34623D14D3A00CCC64F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D3D2A34B23D1505A00CCC64F /* BannerView.swift */,
+				D3D2A34D23D1577500CCC64F /* BannerView.swift */,
 				D3D2A34523D14D3200CCC64F /* SongTVCell */,
 			);
 			path = View;
@@ -340,7 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3D2A34C23D1505A00CCC64F /* BannerView.swift in Sources */,
+				D3D2A34E23D1577500CCC64F /* BannerView.swift in Sources */,
 				D3D2A30823D1410C00CCC64F /* ViewController.swift in Sources */,
 				D3D2A33E23D149C600CCC64F /* Token.swift in Sources */,
 				D3D2A33823D144AC00CCC64F /* KKBoxRequest.swift in Sources */,
