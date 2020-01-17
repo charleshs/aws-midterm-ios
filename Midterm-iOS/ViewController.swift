@@ -10,9 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  let auth = AuthManager()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    
+    auth.getToken { (result) in
+      switch result {
+      case .success(let token):
+        print(token.accessToken)
+      case .failure(let error):
+        print(error)
+      }
+    }
+    
   }
 
 
