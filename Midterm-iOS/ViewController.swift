@@ -10,6 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var tableView: UITableView! {
+    didSet {
+      setupTableView()
+    }
+  }
+  
   let auth = AuthManager()
   
   override func viewDidLoad() {
@@ -23,9 +29,36 @@ class ViewController: UIViewController {
         print(error)
       }
     }
-    
   }
-
-
+  
+  func setupTableView() {
+    
+    tableView.dataSource = self
+    tableView.delegate = self
+    
+    let nib = UINib(nibName: SongTableViewCell.identifier, bundle: nil)
+    tableView.register(nib, forCellReuseIdentifier: SongTableViewCell.identifier)
+  }
 }
 
+extension ViewController: UITableViewDataSource {
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 10
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    let cell = tableView.dequeueReusableCell(withIdentifier: SongTableViewCell.identifier, for: indexPath)
+    guard let songCell = cell as? SongTableViewCell else { return cell }
+    
+    songCell.titleLabel.text = "Row \(indexPath.row)"
+    
+    return songCell
+  }
+  
+}
+
+extension ViewController: UITableViewDelegate {
+  
+}

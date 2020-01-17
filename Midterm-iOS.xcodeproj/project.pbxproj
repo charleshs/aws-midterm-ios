@@ -19,6 +19,10 @@
 		D3D2A33A23D1487900CCC64F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A33923D1487900CCC64F /* AuthManager.swift */; };
 		D3D2A33C23D148C800CCC64F /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A33B23D148C800CCC64F /* JSONParser.swift */; };
 		D3D2A33E23D149C600CCC64F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A33D23D149C600CCC64F /* Token.swift */; };
+		D3D2A34323D14D2B00CCC64F /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34123D14D2B00CCC64F /* SongTableViewCell.swift */; };
+		D3D2A34423D14D2B00CCC64F /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */; };
+		D3D2A34A23D14DBB00CCC64F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34923D14DBB00CCC64F /* Observable.swift */; };
+		D3D2A34C23D1505A00CCC64F /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34B23D1505A00CCC64F /* BannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		D3D2A33923D1487900CCC64F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		D3D2A33B23D148C800CCC64F /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		D3D2A33D23D149C600CCC64F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		D3D2A34123D14D2B00CCC64F /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
+		D3D2A34923D14DBB00CCC64F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		D3D2A34B23D1505A00CCC64F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,14 +115,17 @@
 		D3D2A30223D1410C00CCC64F /* Midterm-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D3D2A33623D1449500CCC64F /* Model */,
 				D3D2A33523D1445100CCC64F /* Utility */,
-				D3D2A30323D1410C00CCC64F /* AppDelegate.swift */,
+				D3D2A33623D1449500CCC64F /* Model */,
+				D3D2A34723D14D6A00CCC64F /* Controller */,
+				D3D2A34823D14D8400CCC64F /* ViewModel */,
+				D3D2A34623D14D3A00CCC64F /* View */,
 				D3D2A30723D1410C00CCC64F /* ViewController.swift */,
 				D3D2A30923D1410C00CCC64F /* Main.storyboard */,
 				D3D2A30C23D1411000CCC64F /* Assets.xcassets */,
 				D3D2A30E23D1411000CCC64F /* LaunchScreen.storyboard */,
 				D3D2A31123D1411000CCC64F /* Info.plist */,
+				D3D2A30323D1410C00CCC64F /* AppDelegate.swift */,
 			);
 			path = "Midterm-iOS";
 			sourceTree = "<group>";
@@ -162,6 +173,39 @@
 				D3D2A33D23D149C600CCC64F /* Token.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		D3D2A34523D14D3200CCC64F /* SongTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				D3D2A34123D14D2B00CCC64F /* SongTableViewCell.swift */,
+				D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */,
+			);
+			path = SongTVCell;
+			sourceTree = "<group>";
+		};
+		D3D2A34623D14D3A00CCC64F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3D2A34B23D1505A00CCC64F /* BannerView.swift */,
+				D3D2A34523D14D3200CCC64F /* SongTVCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3D2A34723D14D6A00CCC64F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D3D2A34823D14D8400CCC64F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D3D2A34923D14DBB00CCC64F /* Observable.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D2A34423D14D2B00CCC64F /* SongTableViewCell.xib in Resources */,
 				D3D2A31023D1411000CCC64F /* LaunchScreen.storyboard in Resources */,
 				D3D2A30D23D1411000CCC64F /* Assets.xcassets in Resources */,
 				D3D2A30B23D1410C00CCC64F /* Main.storyboard in Resources */,
@@ -295,10 +340,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D2A34C23D1505A00CCC64F /* BannerView.swift in Sources */,
 				D3D2A30823D1410C00CCC64F /* ViewController.swift in Sources */,
 				D3D2A33E23D149C600CCC64F /* Token.swift in Sources */,
 				D3D2A33823D144AC00CCC64F /* KKBoxRequest.swift in Sources */,
 				D3D2A33C23D148C800CCC64F /* JSONParser.swift in Sources */,
+				D3D2A34A23D14DBB00CCC64F /* Observable.swift in Sources */,
+				D3D2A34323D14D2B00CCC64F /* SongTableViewCell.swift in Sources */,
 				D3D2A30423D1410C00CCC64F /* AppDelegate.swift in Sources */,
 				D3D2A33423D1444C00CCC64F /* HTTPClient.swift in Sources */,
 				D3D2A33A23D1487900CCC64F /* AuthManager.swift in Sources */,
