@@ -20,8 +20,16 @@ class SongTableViewCell: UITableViewCell {
   
   @IBOutlet weak var favoriteBtn: UIButton!
   
-  
   @IBAction func didTapFavoriteBtn(_ sender: Any) {
+    
+  }
+  
+  func layoutCell(with viewModel: SongViewModel) {
+    
+    titleLabel.text = viewModel.songTitle
+    
+    songImgView.loadImage(urlString: viewModel.imageUrlString)
+    
   }
   
 }

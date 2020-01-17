@@ -78,7 +78,10 @@ extension ViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: SongTableViewCell.identifier, for: indexPath)
     guard let songCell = cell as? SongTableViewCell else { return cell }
     
-    songCell.titleLabel.text = provider.playlist[indexPath.row].name
+    let song = provider.playlist[indexPath.row]
+    
+    let viewModel = SongViewModel(songTitle: song.name, imageUrlString: song.album.images[0].url)
+    songCell.layoutCell(with: viewModel)
     
     return songCell
   }
