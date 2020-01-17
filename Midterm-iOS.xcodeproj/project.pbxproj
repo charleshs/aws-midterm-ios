@@ -28,12 +28,13 @@
 		D3D2A34323D14D2B00CCC64F /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34123D14D2B00CCC64F /* SongTableViewCell.swift */; };
 		D3D2A34423D14D2B00CCC64F /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */; };
 		D3D2A34A23D14DBB00CCC64F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34923D14DBB00CCC64F /* Observable.swift */; };
-		D3D2A34E23D1577500CCC64F /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34D23D1577500CCC64F /* BannerView.swift */; };
+		D3D2A34E23D1577500CCC64F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34D23D1577500CCC64F /* HeaderView.swift */; };
 		D3D2A35123D15EFF00CCC64F /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35023D15EFF00CCC64F /* Song.swift */; };
 		D3D2A35323D15F7400CCC64F /* KKSuccessParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35223D15F7400CCC64F /* KKSuccessParser.swift */; };
 		D3D2A35523D1615900CCC64F /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35423D1615900CCC64F /* Paging.swift */; };
 		D3D2A35723D1615E00CCC64F /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35623D1615E00CCC64F /* Summary.swift */; };
 		D3D2A35A23D162AE00CCC64F /* PlaylistProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35923D162AE00CCC64F /* PlaylistProvider.swift */; };
+		D3F30BF123D1A99B002D4DE2 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F30BF023D1A99B002D4DE2 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,12 +86,13 @@
 		D3D2A34123D14D2B00CCC64F /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
 		D3D2A34923D14DBB00CCC64F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		D3D2A34D23D1577500CCC64F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		D3D2A34D23D1577500CCC64F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		D3D2A35023D15EFF00CCC64F /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		D3D2A35223D15F7400CCC64F /* KKSuccessParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKSuccessParser.swift; sourceTree = "<group>"; };
 		D3D2A35423D1615900CCC64F /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
 		D3D2A35623D1615E00CCC64F /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		D3D2A35923D162AE00CCC64F /* PlaylistProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistProvider.swift; sourceTree = "<group>"; };
+		D3F30BF023D1A99B002D4DE2 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F2ACE6E1C461FBA020176AD0 /* Pods_Midterm_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Midterm_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85AF789EAF8B91397D28E89 /* Pods-Midterm-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midterm-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Midterm-iOS/Pods-Midterm-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,12 +157,12 @@
 			path = "Third Party Wrapper";
 			sourceTree = "<group>";
 		};
-		D318C06523D18B7300848C27 /* Banner */ = {
+		D318C06523D18B7300848C27 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				D3D2A34D23D1577500CCC64F /* BannerView.swift */,
+				D3D2A34D23D1577500CCC64F /* HeaderView.swift */,
 			);
-			path = Banner;
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		D3D2A2F723D1410C00CCC64F = {
@@ -233,6 +235,7 @@
 		D3D2A33623D1449500CCC64F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D3F30BEF23D1A992002D4DE2 /* Global */,
 				D3D2A33523D1445100CCC64F /* Utility */,
 				D3D2A34F23D15EE300CCC64F /* DataModel */,
 				D3D2A35823D162A000CCC64F /* Playlist */,
@@ -262,7 +265,7 @@
 		D3D2A34623D14D3A00CCC64F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D318C06523D18B7300848C27 /* Banner */,
+				D318C06523D18B7300848C27 /* HeaderView */,
 				D3D2A34523D14D3200CCC64F /* SongTVCell */,
 			);
 			path = View;
@@ -294,6 +297,14 @@
 				D3D2A35923D162AE00CCC64F /* PlaylistProvider.swift */,
 			);
 			path = Playlist;
+			sourceTree = "<group>";
+		};
+		D3F30BEF23D1A992002D4DE2 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				D3F30BF023D1A99B002D4DE2 /* Constant.swift */,
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,13 +548,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3D2A35323D15F7400CCC64F /* KKSuccessParser.swift in Sources */,
-				D3D2A34E23D1577500CCC64F /* BannerView.swift in Sources */,
+				D3D2A34E23D1577500CCC64F /* HeaderView.swift in Sources */,
 				D3D2A30823D1410C00CCC64F /* PlaylistViewController.swift in Sources */,
 				D3D2A33E23D149C600CCC64F /* Token.swift in Sources */,
 				D3D2A33823D144AC00CCC64F /* KKRequest.swift in Sources */,
 				D3D2A33C23D148C800CCC64F /* JSONParser.swift in Sources */,
 				D318C06423D17C4A00848C27 /* MJRefreshWrapper.swift in Sources */,
 				D3D2A35723D1615E00CCC64F /* Summary.swift in Sources */,
+				D3F30BF123D1A99B002D4DE2 /* Constant.swift in Sources */,
 				D3D2A35523D1615900CCC64F /* Paging.swift in Sources */,
 				D3D2A34A23D14DBB00CCC64F /* Observable.swift in Sources */,
 				D318C06223D1787300848C27 /* SongViewModel.swift in Sources */,

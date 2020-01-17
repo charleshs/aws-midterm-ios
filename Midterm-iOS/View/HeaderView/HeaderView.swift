@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BannerView: UIView {
+class HeaderView: UIView {
 
   let imgView: UIImageView = {
     let view = UIImageView()

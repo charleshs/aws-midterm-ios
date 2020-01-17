@@ -12,6 +12,15 @@ class PlaylistViewController: UIViewController {
   
   var songViewModels = [SongViewModel]()
   
+  let headerView: UIImageView = {
+    let view = UIImageView()
+    view.frame = CGRect(x: 0, y: 0, width: Constant.kScreenWidth, height: Constant.kScreenWidth)
+    view.image = UIImage(named: "HeaderImage")
+    view.contentMode = .scaleAspectFill
+    view.clipsToBounds = true
+    return view
+  }()
+  
   @IBOutlet weak var tableView: UITableView! {
     didSet {
       setupTableView()
@@ -28,8 +37,12 @@ class PlaylistViewController: UIViewController {
   
   private let provider = PlaylistProvider()
   
+ 
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    view.addSubview(headerView)
     
     guard let _ = AuthManager.shared.token else {
       AuthManager.shared.getToken { [weak self] result in
@@ -53,11 +66,9 @@ class PlaylistViewController: UIViewController {
     
     let nib = UINib(nibName: SongTableViewCell.identifier, bundle: nil)
     tableView.register(nib, forCellReuseIdentifier: SongTableViewCell.identifier)
-    let bannerFrame = CGRect(x: 0,
-                             y: 0,
-                             width: UIScreen.main.bounds.width,
-                             height: UIScreen.main.bounds.width)
-    tableView.tableHeaderView = BannerView(frame: bannerFrame, image: UIImage(named: "BannerImage"))
+    
+    tableView.contentInset = UIEdgeInsets(top: Constant.kScreenWidth, left: 0, bottom: 0, right: 0)
+    
     implementPagination()
   }
   
@@ -126,6 +137,10 @@ extension PlaylistViewController: UITableViewDataSource {
 
 extension PlaylistViewController: UITableViewDelegate {
   
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return UITableView.automaticDimension
+  }
+  
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     cell.contentView.alpha = 0
     UIViewPropertyAnimator(duration: 0.2, curve: .linear) {
@@ -138,6 +153,20 @@ extension PlaylistViewController: UITableViewDelegate {
 extension PlaylistViewController: UIScrollViewDelegate {
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    <#code#>
+    
+    let y = Constant.kScreenWidth - (scrollView.contentOffset.y + Constant.kScreenWidth)
+    let offset = Constant.kScreenWidth - y
+    
+    var height = CGFloat.zero
+    
+    if offset < 0 {
+      height = max(y, Constant.kScreenWidth)
+    } else {
+      height = min(max(y, 0), Constant.kScreenWidth)
+      headerView.alpha = y / Constant.kScreenWidth
+    }
+    
+    headerView.frame = CGRect(x: 0, y: 0, width: Constant.kScreenWidth, height: height)
   }
+ 
 }
