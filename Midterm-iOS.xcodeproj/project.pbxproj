@@ -12,6 +12,7 @@
 		CEE9D8120A2F11080A328095 /* Pods_Midterm_iOS_Midterm_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864D0BB7E598DB00DEF2C81B /* Pods_Midterm_iOS_Midterm_iOSUITests.framework */; };
 		D318C06023D177B400848C27 /* KingfisherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318C05F23D177B400848C27 /* KingfisherWrapper.swift */; };
 		D318C06223D1787300848C27 /* SongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318C06123D1787300848C27 /* SongViewModel.swift */; };
+		D318C06423D17C4A00848C27 /* MJRefreshWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D318C06323D17C4A00848C27 /* MJRefreshWrapper.swift */; };
 		D3D2A30423D1410C00CCC64F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A30323D1410C00CCC64F /* AppDelegate.swift */; };
 		D3D2A30823D1410C00CCC64F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A30723D1410C00CCC64F /* ViewController.swift */; };
 		D3D2A30B23D1410C00CCC64F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D2A30923D1410C00CCC64F /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		864D0BB7E598DB00DEF2C81B /* Pods_Midterm_iOS_Midterm_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Midterm_iOS_Midterm_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D318C05F23D177B400848C27 /* KingfisherWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherWrapper.swift; sourceTree = "<group>"; };
 		D318C06123D1787300848C27 /* SongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewModel.swift; sourceTree = "<group>"; };
+		D318C06323D17C4A00848C27 /* MJRefreshWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MJRefreshWrapper.swift; sourceTree = "<group>"; };
 		D3D2A30023D1410C00CCC64F /* Midterm-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Midterm-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D2A30323D1410C00CCC64F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D2A30723D1410C00CCC64F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,12 +146,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D318C05E23D1779300848C27 /* Wrapper */ = {
+		D318C05E23D1779300848C27 /* Third Party Wrapper */ = {
 			isa = PBXGroup;
 			children = (
 				D318C05F23D177B400848C27 /* KingfisherWrapper.swift */,
+				D318C06323D17C4A00848C27 /* MJRefreshWrapper.swift */,
 			);
-			path = Wrapper;
+			path = "Third Party Wrapper";
 			sourceTree = "<group>";
 		};
 		D3D2A2F723D1410C00CCC64F = {
@@ -177,7 +180,7 @@
 		D3D2A30223D1410C00CCC64F /* Midterm-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D318C05E23D1779300848C27 /* Wrapper */,
+				D318C05E23D1779300848C27 /* Third Party Wrapper */,
 				D3D2A33523D1445100CCC64F /* Utility */,
 				D3D2A33623D1449500CCC64F /* Model */,
 				D3D2A34723D14D6A00CCC64F /* Controller */,
@@ -539,6 +542,7 @@
 				D3D2A33E23D149C600CCC64F /* Token.swift in Sources */,
 				D3D2A33823D144AC00CCC64F /* KKRequest.swift in Sources */,
 				D3D2A33C23D148C800CCC64F /* JSONParser.swift in Sources */,
+				D318C06423D17C4A00848C27 /* MJRefreshWrapper.swift in Sources */,
 				D3D2A35723D1615E00CCC64F /* Summary.swift in Sources */,
 				D3D2A35523D1615900CCC64F /* Paging.swift in Sources */,
 				D3D2A34A23D14DBB00CCC64F /* Observable.swift in Sources */,

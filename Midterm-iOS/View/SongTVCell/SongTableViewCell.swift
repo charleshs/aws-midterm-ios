@@ -14,6 +14,8 @@ class SongTableViewCell: UITableViewCell {
     return String(describing: SongTableViewCell.self)
   }
   
+  var viewModel: SongViewModel?
+  
   @IBOutlet weak var songImgView: UIImageView!
   
   @IBOutlet weak var titleLabel: UILabel!
@@ -22,14 +24,28 @@ class SongTableViewCell: UITableViewCell {
   
   @IBAction func didTapFavoriteBtn(_ sender: Any) {
     
+    viewModel?.isFavorite.value.toggle()
   }
   
   func layoutCell(with viewModel: SongViewModel) {
+    
+    self.viewModel = viewModel
     
     titleLabel.text = viewModel.songTitle
     
     songImgView.loadImage(urlString: viewModel.imageUrlString)
     
+    viewModel.isFavorite.addObserver { [weak self] isFavorite in
+      
+      self?.favoriteBtn.backgroundColor = isFavorite ? UIColor.systemPink : UIColor.clear
+    }
+    
+  }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    
+    viewModel?.isFavorite.removeObserver()
   }
   
 }

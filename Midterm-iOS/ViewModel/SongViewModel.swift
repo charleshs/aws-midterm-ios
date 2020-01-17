@@ -8,11 +8,17 @@
 
 import Foundation
 
-struct SongViewModel {
+class SongViewModel {
   
   let songTitle: String
   
   let imageUrlString: String
   
   var isFavorite = Observable<Bool>(value: false)
+  
+  init(songTitle: String, imageUrlString: String) {
+    
+    self.songTitle = songTitle
+    self.imageUrlString = imageUrlString
+  }
 }
