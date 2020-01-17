@@ -126,4 +126,18 @@ extension PlaylistViewController: UITableViewDataSource {
 
 extension PlaylistViewController: UITableViewDelegate {
   
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    cell.contentView.alpha = 0
+    UIViewPropertyAnimator(duration: 0.2, curve: .linear) {
+      cell.contentView.alpha = 1
+    }.startAnimation()
+  }
+  
+}
+
+extension PlaylistViewController: UIScrollViewDelegate {
+  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    <#code#>
+  }
 }
