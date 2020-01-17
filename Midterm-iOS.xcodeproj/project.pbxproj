@@ -15,7 +15,7 @@
 		D3D2A31B23D1411000CCC64F /* Midterm_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A31A23D1411000CCC64F /* Midterm_iOSTests.swift */; };
 		D3D2A32623D1411000CCC64F /* Midterm_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A32523D1411000CCC64F /* Midterm_iOSUITests.swift */; };
 		D3D2A33423D1444C00CCC64F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A33323D1444C00CCC64F /* HTTPClient.swift */; };
-		D3D2A33823D144AC00CCC64F /* KKBoxRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A33723D144AC00CCC64F /* KKBoxRequest.swift */; };
+		D3D2A33823D144AC00CCC64F /* KKRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A33723D144AC00CCC64F /* KKRequest.swift */; };
 		D3D2A33A23D1487900CCC64F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A33923D1487900CCC64F /* AuthManager.swift */; };
 		D3D2A33C23D148C800CCC64F /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A33B23D148C800CCC64F /* JSONParser.swift */; };
 		D3D2A33E23D149C600CCC64F /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A33D23D149C600CCC64F /* Token.swift */; };
@@ -23,6 +23,11 @@
 		D3D2A34423D14D2B00CCC64F /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */; };
 		D3D2A34A23D14DBB00CCC64F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34923D14DBB00CCC64F /* Observable.swift */; };
 		D3D2A34E23D1577500CCC64F /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A34D23D1577500CCC64F /* BannerView.swift */; };
+		D3D2A35123D15EFF00CCC64F /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35023D15EFF00CCC64F /* Song.swift */; };
+		D3D2A35323D15F7400CCC64F /* KKSuccessParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35223D15F7400CCC64F /* KKSuccessParser.swift */; };
+		D3D2A35523D1615900CCC64F /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35423D1615900CCC64F /* Paging.swift */; };
+		D3D2A35723D1615E00CCC64F /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35623D1615E00CCC64F /* Summary.swift */; };
+		D3D2A35A23D162AE00CCC64F /* PlaylistProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D2A35923D162AE00CCC64F /* PlaylistProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +62,7 @@
 		D3D2A32523D1411000CCC64F /* Midterm_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Midterm_iOSUITests.swift; sourceTree = "<group>"; };
 		D3D2A32723D1411000CCC64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3D2A33323D1444C00CCC64F /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		D3D2A33723D144AC00CCC64F /* KKBoxRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBoxRequest.swift; sourceTree = "<group>"; };
+		D3D2A33723D144AC00CCC64F /* KKRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKRequest.swift; sourceTree = "<group>"; };
 		D3D2A33923D1487900CCC64F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		D3D2A33B23D148C800CCC64F /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		D3D2A33D23D149C600CCC64F /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
@@ -65,6 +70,11 @@
 		D3D2A34223D14D2B00CCC64F /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
 		D3D2A34923D14DBB00CCC64F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		D3D2A34D23D1577500CCC64F /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		D3D2A35023D15EFF00CCC64F /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		D3D2A35223D15F7400CCC64F /* KKSuccessParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKSuccessParser.swift; sourceTree = "<group>"; };
+		D3D2A35423D1615900CCC64F /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
+		D3D2A35623D1615E00CCC64F /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		D3D2A35923D162AE00CCC64F /* PlaylistProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,8 +161,9 @@
 		D3D2A33523D1445100CCC64F /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				D3D2A33B23D148C800CCC64F /* JSONParser.swift */,
 				D3D2A33323D1444C00CCC64F /* HTTPClient.swift */,
+				D3D2A33B23D148C800CCC64F /* JSONParser.swift */,
+				D3D2A33723D144AC00CCC64F /* KKRequest.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -160,7 +171,8 @@
 		D3D2A33623D1449500CCC64F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D3D2A33723D144AC00CCC64F /* KKBoxRequest.swift */,
+				D3D2A34F23D15EE300CCC64F /* DataModel */,
+				D3D2A35823D162A000CCC64F /* Playlist */,
 				D3D2A33F23D149CC00CCC64F /* Auth */,
 			);
 			path = Model;
@@ -206,6 +218,25 @@
 				D3D2A34923D14DBB00CCC64F /* Observable.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D3D2A34F23D15EE300CCC64F /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				D3D2A35223D15F7400CCC64F /* KKSuccessParser.swift */,
+				D3D2A35023D15EFF00CCC64F /* Song.swift */,
+				D3D2A35423D1615900CCC64F /* Paging.swift */,
+				D3D2A35623D1615E00CCC64F /* Summary.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		D3D2A35823D162A000CCC64F /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				D3D2A35923D162AE00CCC64F /* PlaylistProvider.swift */,
+			);
+			path = Playlist;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,14 +371,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D2A35323D15F7400CCC64F /* KKSuccessParser.swift in Sources */,
 				D3D2A34E23D1577500CCC64F /* BannerView.swift in Sources */,
 				D3D2A30823D1410C00CCC64F /* ViewController.swift in Sources */,
 				D3D2A33E23D149C600CCC64F /* Token.swift in Sources */,
-				D3D2A33823D144AC00CCC64F /* KKBoxRequest.swift in Sources */,
+				D3D2A33823D144AC00CCC64F /* KKRequest.swift in Sources */,
 				D3D2A33C23D148C800CCC64F /* JSONParser.swift in Sources */,
+				D3D2A35723D1615E00CCC64F /* Summary.swift in Sources */,
+				D3D2A35523D1615900CCC64F /* Paging.swift in Sources */,
 				D3D2A34A23D14DBB00CCC64F /* Observable.swift in Sources */,
 				D3D2A34323D14D2B00CCC64F /* SongTableViewCell.swift in Sources */,
+				D3D2A35A23D162AE00CCC64F /* PlaylistProvider.swift in Sources */,
 				D3D2A30423D1410C00CCC64F /* AppDelegate.swift in Sources */,
+				D3D2A35123D15EFF00CCC64F /* Song.swift in Sources */,
 				D3D2A33423D1444C00CCC64F /* HTTPClient.swift in Sources */,
 				D3D2A33A23D1487900CCC64F /* AuthManager.swift in Sources */,
 			);
